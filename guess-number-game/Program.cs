@@ -6,20 +6,29 @@ Console.WriteLine("Enter your guess or enter -1 to give up: ");
 int number =8 ;
 int guess = 0;
 int count = 1;
+bool keepPlaying = true;
 
 guess=int.Parse(Console.ReadLine());
-while(guess!=-1 && guess!=number)
+while( guess!=number && keepPlaying)
 {
     if(guess>number)
     {
         Console.WriteLine("Too high, try again");
     }
-    else
-    {
-        Console.WriteLine("Too low, try again");
+    else if (guess == -1) {
+    Console.WriteLine("You gave up, the number was " + number);
+    keepPlaying = false;
     }
-    guess=int.Parse(Console.ReadLine());
+  else
+  {
+    Console.WriteLine("Too low, try again");
+  }
+  guess=int.Parse(Console.ReadLine());
     count++;
 }
-Console.WriteLine("Awesome! You guessed the number in {0} tries", count);
+if(keepPlaying)
+{
+    Console.WriteLine("You guessed it in " + count + " tries");
+}
+
 
