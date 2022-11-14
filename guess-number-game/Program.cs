@@ -5,7 +5,7 @@ Console.WriteLine("Enter your guess or enter -1 to give up: ");
 
 int number =8 ;
 int guess = 0;
-int count = 0;
+int count = 1;
 
 guess=int.Parse(Console.ReadLine());
 while(guess!=-1 && guess!=number)
